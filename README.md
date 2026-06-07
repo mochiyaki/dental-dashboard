@@ -116,7 +116,7 @@ Current behavior:
 
 Compatible targets include OpenAI, OpenAI-compatible gateways, and local vision model servers that implement streaming chat completions.
 
-## Tech Specs: Cursor
+## Tech Specs: Cursor 💎
 
 Cursor can use the `mcp/` server as a local MCP provider after the MCP package has been built.
 
@@ -137,7 +137,7 @@ Example stdio MCP config:
 
 For HTTP-capable MCP clients, start the server with `npm run start:http -- --port=3000` from `mcp/` and point the client at `http://localhost:3000/mcp`.
 
-## Tech Specs: Redis
+## Tech Specs: Redis 💾
 
 The MCP server uses an in-memory cache by default. Redis is optional and is used when a Redis URL is provided.
 
@@ -169,7 +169,7 @@ REDIS_CONNECT_TIMEOUT_MS=5000
 
 If Redis cannot be reached, the server logs the error and falls back to memory cache. Cache status is included in the `/health` response.
 
-## Tech Specs: CopilotKit
+## Tech Specs: CopilotKit 🪁
 
 CopilotKit should connect to the MCP server through the streamable HTTP endpoint.
 
@@ -198,7 +198,7 @@ export const builtInAgent = new BuiltInAgent({
 
 The server's `/health` response also returns a CopilotKit-ready `mcpServers` array for the current host and port.
 
-## Fine-Tuning Starter
+## Fine-Tuning Starter 🐝
 
 The `wandb-trainer/` folder contains a QLoRA SFT script and starter dataset:
 
@@ -259,8 +259,8 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
 
 ## 📄 Tech Specs (see above)
-- wandb/weave (model trainer/fine tuning)
-- OpenAI, Cursor (coding and/or APIs)
-- Redis, CopilotKit (flow and/or mcp)
+- wandb/weave (model trainer/fine tuning) 🐝
+- OpenAI, Cursor (coding and/or APIs) 💎
+- Redis, CopilotKit (flow and/or mcp) 🪁
 
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/mcp_setup.png)
