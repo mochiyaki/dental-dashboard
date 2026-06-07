@@ -69,7 +69,7 @@ The dashboard sends requests with:
 
 Image inputs are sent using OpenAI-style multimodal message content with `image_url` data URLs. The UI reads Server-Sent Event style streaming chunks from `choices[0].delta.content`.
 
-## 🤖 Medical/Dental MCP Server
+## 🤖 Medical/Dental MCP Server (Multi-agent Orchestration Workflow)
 
 The `mcp/` package is a standalone Model Context Protocol server for medical and dental context tools. It can run locally over stdio for agent/IDE clients, or over streamable HTTP for web runtimes such as CopilotKit.
 
@@ -259,6 +259,7 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
 
 ## 📄 Tech Specs (see above)
+- wandb/weave (model trainer/fine tuning)
 - OpenAI, Cursor (coding and/or APIs)
 - Redis, CopilotKit (flow and/or mcp)
 
