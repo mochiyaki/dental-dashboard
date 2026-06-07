@@ -261,3 +261,5 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ## 📄 Tech Specs (see above)
 - OpenAI, Cursor (coding and/or APIs)
 - Redis, CopilotKit (flow and/or mcp)
+
+![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/mcp_setup.png)
