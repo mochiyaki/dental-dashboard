@@ -128,7 +128,7 @@ Example stdio MCP config:
     "medical-dental": {
       "command": "node",
       "args": [
-        "C:/Users/calcu/Desktop/ideas/test-dental/git-dashboard/mcp/build/index.js"
+        "C:/Users/<username>/git-dashboard/mcp/build/index.js"
       ]
     }
   }
