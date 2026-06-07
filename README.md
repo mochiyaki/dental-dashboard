@@ -256,6 +256,8 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ## 📋 Model Fine Tuning Script
 - see folder `wandb-trainer`
 
+![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
+
 ## 📄 Tech Specs (see above)
 - OpenAI, Cursor (coding and/or APIs)
 - Redis, CopilotKit (flow and/or mcp)
