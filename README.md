@@ -252,7 +252,7 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 - The frontend AI panel talks directly to the configured chat-completions endpoint; it does not currently call the MCP server directly.
 - The MCP server is intended for agent runtimes and IDE integrations that need authoritative medical context tools.
 - Exported workflow JSON embeds image data and chat history, so treat exports as sensitive clinical-adjacent data.
-=======
+
 ## 📋 Model Fine Tuning Script
 - see folder `wandb-trainer`
 
