@@ -246,7 +246,6 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 `-- vite.config.ts
 ```
 
-<<<<<<< HEAD
 ## Development Notes
 
 - Run the dashboard and MCP server in separate terminals when testing end-to-end agent workflows.
@@ -257,10 +256,6 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ## 📋 Model Fine Tuning Script
 - see folder `wandb-trainer`
 
-## 📄 Tech Specs
+## 📄 Tech Specs (see above)
 - OpenAI, Cursor (coding and/or APIs)
 - Redis, CopilotKit (flow and/or mcp)
-
-## 📑 TODO List
-- build a medical MCP with Redis and CopilotKit
->>>>>>> 17ce42ad487b821a04bf1df464f47ee84f518889
