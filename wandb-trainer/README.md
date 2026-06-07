@@ -1,4 +1,4 @@
-## model fine tuning
+## model fine tuning script
 
 A simple QLoRA fine-tuning script for a lightweight Gemma 4 model using Hugging Face TRL + PEFT + W&B. TRL’s `SFTTrainer` supports supervised fine-tuning, Google’s Gemma guide uses TRL/QLoRA, and W&B/Weave can track training/evals.
 
