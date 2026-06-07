@@ -79,5 +79,9 @@ An advanced, AI-assisted web application for dental radiography analysis. This d
 ## 📋 Model Fine Tuning Script
 - see folder `wandb-trainer`
 
+## 📄 Tech Specs
+- OpenAI, Cursor (coding and/or APIs)
+- Redis, CopilotKit (flow and/or mcp)
+
 ## 📑 TODO List
 - build a medical MCP with Redis and CopilotKit
