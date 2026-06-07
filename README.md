@@ -1,4 +1,4 @@
-# Dental Workflow Dashboard
+# 🦷 Dental Dashboard
 
 An AI-assisted dental radiography workspace for reviewing panoramic OPG images, generating a simulated 3D CBCT-style scaffold, annotating findings, and sending image context to an OpenAI-compatible vision model for structured radiology support.
 
@@ -51,7 +51,7 @@ Preview the production build:
 npm run preview
 ```
 
-## Configure AI Analysis
+## ⚙️ Configure AI Analysis
 
 Open the dashboard, click the settings button, and enter:
 
@@ -69,7 +69,7 @@ The dashboard sends requests with:
 
 Image inputs are sent using OpenAI-style multimodal message content with `image_url` data URLs. The UI reads Server-Sent Event style streaming chunks from `choices[0].delta.content`.
 
-## Medical MCP Server
+## 🤖 Medical/Dental MCP Server
 
 The `mcp/` package is a standalone Model Context Protocol server for medical and dental context tools. It can run locally over stdio for agent/IDE clients, or over streamable HTTP for web runtimes such as CopilotKit.
 
@@ -222,7 +222,7 @@ python trainer.py
 
 Before training on clinical text, remove PHI/PII, keep answers cautious, and include clear guidance to consult a licensed dentist or clinician for patient-specific concerns.
 
-## Project Structure
+## 🏗️ Project Structure
 
 ```text
 .
