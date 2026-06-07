@@ -57,7 +57,7 @@ Open the dashboard, click the settings button, and enter:
 
 - **Model Endpoint**: an OpenAI-compatible chat completions URL. The default is `http://127.0.0.1:8888/v1/chat/completions`.
 - **API Key**: optional bearer token. Leave blank for local endpoints that do not require auth.
-- **Model Identifier**: the model name expected by the endpoint, such as `gpt-4o`, `local-model`, or a local vision model identifier.
+- **Model Identifier**: the model name expected by the endpoint, such as `gpt-5.5`, `gemma-4`, etc., or/with a vision model identifier.
 
 The dashboard sends requests with:
 
