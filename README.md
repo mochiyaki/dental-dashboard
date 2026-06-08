@@ -21,7 +21,7 @@ This repository now contains three related pieces:
 - **Medical MCP server**: expose drug, literature, global health, pediatric, and cache-monitoring tools through stdio or streamable HTTP.
 - **Fine-tuning starter**: train a lightweight dental assistant model with TRL, PEFT/QLoRA.
 
-## App Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite 6.
 - **3D rendering**: Three.js/WebGL.
