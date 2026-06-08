@@ -174,6 +174,7 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 ## 📋 Memory/GPU status monitor
 
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
+*cited from weave
 
 ## 🔌 MCP connector (optional) 
 
