@@ -6,7 +6,7 @@ This repository now contains three related pieces:
 
 - `src/`: the React/Vite dashboard.
 - `mcp/`: a medical/dental Model Context Protocol server with HTTP and stdio transports.
-- `wandb-trainer/`: a QLoRA supervised fine-tuning starter for dental/medical instruction data.
+- `trainer/`: a QLoRA supervised fine-tuning starter for dental/medical instruction data.
 
 > Safety note: this project is for research, education, prototyping, and workflow exploration. It must not be used as the sole basis for diagnosis, treatment, triage, or other clinical decisions.
 
@@ -19,7 +19,7 @@ This repository now contains three related pieces:
 - **AI analysis panel**: send the full OPG or a selected rendered 3D crop to a streaming OpenAI-compatible chat-completions endpoint.
 - **Workflow persistence**: export and import a single JSON workflow containing the embedded OPG image, model metadata, annotations, fills, and chat history.
 - **Medical MCP server**: expose drug, literature, global health, pediatric, and cache-monitoring tools through stdio or streamable HTTP.
-- **Fine-tuning starter**: train a lightweight dental assistant model with TRL, PEFT/QLoRA, W&B, and Weave.
+- **Fine-tuning starter**: train a lightweight dental assistant model with TRL, PEFT/QLoRA.
 
 ## App Tech Stack
 
@@ -132,7 +132,7 @@ wandb login
 huggingface-cli login
 ```
 
-Run from `wandb-trainer/`:
+Run from `trainer/`:
 
 ```bash
 python trainer.py
