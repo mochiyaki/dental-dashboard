@@ -101,7 +101,7 @@ Useful HTTP endpoints:
 
 The MCP server includes tools for FDA drug data, RxNorm nomenclature, PubMed literature, Google Scholar-style research lookups, WHO health statistics, pediatric guidelines, multi-database search, and cache statistics. See `mcp/README.md` for the full tool list.
 
-## Tech Specs: OpenAI compatible gateways
+## OpenAI compatible gateways
 
 The dashboard does not depend on the official OpenAI SDK. It uses direct `fetch` calls against any endpoint that follows the OpenAI chat-completions request and streaming response format.
 
@@ -171,7 +171,7 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 - The MCP server is intended for agent runtimes and IDE integrations that need authoritative medical context tools.
 - Exported workflow JSON embeds image data and chat history, so treat exports as sensitive clinical-adjacent data.
 
-## 📋 GPU status monitor
+## 📋 Memory/GPU status monitor
 
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
 
