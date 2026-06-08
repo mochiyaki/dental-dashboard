@@ -69,9 +69,9 @@ The dashboard sends requests with:
 
 Image inputs are sent using OpenAI-style multimodal message content with `image_url` data URLs. The UI reads Server-Sent Event style streaming chunks from `choices[0].delta.content`.
 
-## 🤖 Medical/Dental MCP Server (Multi-agent Orchestration Workflow)
+## 🤖 Medical/Dental MCP Server
 
-The `mcp/` package is a standalone Model Context Protocol server for medical and dental context tools. It can run locally over stdio for agent/IDE clients, or over streamable HTTP for web runtimes such as CopilotKit.
+The `mcp/` package is a standalone Model Context Protocol server for medical and dental context tools. It can run locally over stdio for agent/IDE clients, or over streamable HTTP for web runtimes, such as GPT, Claude, Gemini, Cursor, CopilotKit, etc.
 
 Install, build, and test it from the `mcp/` folder:
 
@@ -101,7 +101,7 @@ Useful HTTP endpoints:
 
 The MCP server includes tools for FDA drug data, RxNorm nomenclature, PubMed literature, Google Scholar-style research lookups, WHO health statistics, pediatric guidelines, multi-database search, and cache statistics. See `mcp/README.md` for the full tool list.
 
-## Tech Specs: OpenAI
+## Tech Specs: OpenAI compatible gateways
 
 The dashboard does not depend on the official OpenAI SDK. It uses direct `fetch` calls against any endpoint that follows the OpenAI chat-completions request and streaming response format.
 
@@ -116,89 +116,7 @@ Current behavior:
 
 Compatible targets include OpenAI, OpenAI-compatible gateways, and local vision model servers that implement streaming chat completions.
 
-## Tech Specs: Cursor 💎
-
-Cursor can use the `mcp/` server as a local MCP provider after the MCP package has been built.
-
-Example stdio MCP config:
-
-```json
-{
-  "mcpServers": {
-    "medical-dental": {
-      "command": "node",
-      "args": [
-        "C:/Users/<username>/git-dashboard/mcp/build/index.js"
-      ]
-    }
-  }
-}
-```
-
-For HTTP-capable MCP clients, start the server with `npm run start:http -- --port=3000` from `mcp/` and point the client at `http://localhost:3000/mcp`.
-
-## Tech Specs: Redis 💾
-
-The MCP server uses an in-memory cache by default. Redis is optional and is used when a Redis URL is provided.
-
-Example:
-
-```bash
-cd mcp
-REDIS_URL=redis://localhost:6379 npm run start:http -- --port=3000
-```
-
-PowerShell equivalent:
-
-```powershell
-cd mcp
-$env:REDIS_URL="redis://localhost:6379"
-npm run start:http -- --port=3000
-```
-
-Supported cache environment variables:
-
-```bash
-CACHE_ENABLED=true
-CACHE_BACKEND=redis
-REDIS_URL=redis://localhost:6379
-REDIS_CACHE_ENABLED=true
-REDIS_CACHE_PREFIX=medical-mcp:cache:
-REDIS_CONNECT_TIMEOUT_MS=5000
-```
-
-If Redis cannot be reached, the server logs the error and falls back to memory cache. Cache status is included in the `/health` response.
-
-## Tech Specs: CopilotKit 🪁
-
-CopilotKit should connect to the MCP server through the streamable HTTP endpoint.
-
-Start the MCP server:
-
-```bash
-cd mcp
-npm run start:http -- --port=3000
-```
-
-Example CopilotKit runtime config:
-
-```ts
-import { BuiltInAgent } from "@copilotkit/runtime/v2";
-
-export const builtInAgent = new BuiltInAgent({
-  model: "openai:gpt-5.4-mini",
-  mcpServers: [
-    {
-      type: "http",
-      url: "http://localhost:3000/mcp",
-    },
-  ],
-});
-```
-
-The server's `/health` response also returns a CopilotKit-ready `mcpServers` array for the current host and port.
-
-## Fine-Tuning Starter 🐝
+## Fine-Tuning Starter (optional)
 
 The `wandb-trainer/` folder contains a QLoRA SFT script and starter dataset:
 
@@ -235,7 +153,7 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 |   |-- src/                 # Medical MCP tools, cache, transports, types
 |   |-- package.json         # MCP scripts and dependencies
 |   `-- README.md
-|-- wandb-trainer/
+|-- trainer/
 |   |-- trainer.py           # QLoRA SFT training script
 |   |-- medical_dental_train.jsonl
 |   `-- README.md
@@ -253,14 +171,10 @@ Before training on clinical text, remove PHI/PII, keep answers cautious, and inc
 - The MCP server is intended for agent runtimes and IDE integrations that need authoritative medical context tools.
 - Exported workflow JSON embeds image data and chat history, so treat exports as sensitive clinical-adjacent data.
 
-## 📋 Model Fine Tuning Script
-- see folder `wandb-trainer`
+## 📋 GPU status monitor
 
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/gpu_status.png)
 
-## 📄 Tech Specs (see above)
-- wandb/weave (model trainer/fine tuning) 🐝
-- OpenAI, Cursor (coding and/or APIs) 💎
-- Redis, CopilotKit (dataflow and/or mcp) 🪁
+## 🔌 MCP connector (optional) 
 
 ![screenshot](https://raw.githubusercontent.com/mochiyaki/dental-dashboard/master/mcp_setup.png)
