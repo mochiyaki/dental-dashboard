@@ -118,7 +118,7 @@ Compatible targets include OpenAI, OpenAI-compatible gateways, and local vision 
 
 ## Fine-Tuning Starter (optional)
 
-The `wandb-trainer/` folder contains a QLoRA SFT script and starter dataset:
+The `trainer/` folder contains a QLoRA SFT script and starter dataset:
 
 - `trainer.py`
 - `medical_dental_train.jsonl`
